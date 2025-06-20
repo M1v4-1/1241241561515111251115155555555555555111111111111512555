@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluorite</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Starry background -->
+  <canvas id="starCanvas"></canvas>
+
+  <!-- Home screen -->
+  <div id="home-screen" class="screen center-screen fade-in">
+    <h1 id="fluorite-title">Fluorite</h1>
+  </div>
+
+  <!-- Shop screen -->
+  <div id="shop-screen" class="screen fade-out hidden">
+    <button id="back-button">← Back</button>
+    <h2 class="shop-header">Welcome to the Shop</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="crystal.png" alt="Fluorite Crystal" />
+        <p>Fluorite Crystal - 9.99€</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="crystal.png" alt="Fluorite Gem" />
+        <p>Fluorite Gem - 14.99€</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="crystal.png" alt="Fluorite Pendant" />
+        <p>Fluorite Pendant - 19.99€</p>
+        <button>Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

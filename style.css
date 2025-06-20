@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: black;
+  overflow: hidden;
+  color: white;
+}
+
+#starCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 60px;
+}
+
+.center-screen {
+  justify-content: center;
+  padding-top: 0;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.hidden {
+  display: none;
+}
+
+/* Fluorite title with neon animation */
+#fluorite-title {
+  font-size: 4rem;
+  color: white;
+  cursor: pointer;
+  animation: glowPulse 2s infinite ease-in-out;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #ffffff,
+    0 0 80px #ffffff;
+}
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 40px #ffffff,
+      0 0 80px #ffffff;
+    transform: scale(1);
+  }
+  50% {
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 40px #fff,
+      0 0 80px #ffffff,
+      0 0 100px #ffffff;
+    transform: scale(1.05);
+  }
+}
+
+#back-button {
+  align-self: flex-start;
+  margin-left: 30px;
+  margin-top: 20px;
+  background-color: #aa66ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #aa66ff;
+}
+#back-button:hover {
+  background-color: #bb77ff;
+}
+
+.shop-header {
+  font-size: 2.5rem;
+  margin: 40px 0 30px;
+}
+
+.product-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.product {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #aa66ff;
+  width: 240px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.product:hover {
+  transform: scale(1.05);
+}
+
+.product img {
+  width: 180px;
+  height: auto;
+  margin-bottom: 15px;
+}
+.product p {
+  font-size: 1.3rem;
+  margin: 10px 0;
+}
+.product button {
+  background-color: #aa66ff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #aa66ff;
+}
+.product button:hover {
+  background-color: #bb77ff;
+}
