@@ -9,12 +9,15 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-const stars = Array.from({ length: 200 }, () => ({
-  x: Math.random() * window.innerWidth,
-  y: Math.random() * window.innerHeight,
-  radius: Math.random() * 1.5,
-  speed: Math.random() * 0.5 + 0.1
-}));
+let stars = [];
+for (let i = 0; i < 200; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 1.5,
+    speed: Math.random() * 0.5 + 0.1
+  });
+}
 
 function drawStars() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -23,6 +26,7 @@ function drawStars() {
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
     ctx.fill();
+
     star.y += star.speed;
     if (star.y > canvas.height) {
       star.y = 0;
@@ -33,15 +37,16 @@ function drawStars() {
 }
 drawStars();
 
-// Page transitions
+// Navigation logic
 const title = document.getElementById('fluorite-title');
-const back = document.getElementById('back-button');
+const backButton = document.getElementById('back-button');
 const home = document.getElementById('home-screen');
 const shop = document.getElementById('shop-screen');
 
 title.addEventListener('click', () => {
   home.classList.remove('fade-in');
   home.classList.add('fade-out');
+
   setTimeout(() => {
     home.classList.add('hidden');
     shop.classList.remove('hidden');
@@ -50,9 +55,10 @@ title.addEventListener('click', () => {
   }, 1000);
 });
 
-back.addEventListener('click', () => {
+backButton.addEventListener('click', () => {
   shop.classList.remove('fade-in');
   shop.classList.add('fade-out');
+
   setTimeout(() => {
     shop.classList.add('hidden');
     home.classList.remove('hidden');
