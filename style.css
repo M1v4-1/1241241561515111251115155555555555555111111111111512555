@@ -253,34 +253,42 @@ transform: translateX(-50%);
 .scroll-prompt {
   text-align: center;
   margin-top: -60px;
-  color: #aaa;
+  color: #b1b1b1;
   font-family: 'Orbitron', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   animation: fadeIn 2s ease-in-out;
 }
 
 .scroll-prompt p {
   margin: 0;
   padding: 0;
-  font-weight: 300;
+  font-weight: 100;
 }
 
 .down-arrow {
-  font-size: 2rem;
-  color: #aa66ff;
-  animation: bounce 2s infinite;
-  margin-top: 8px;
+  display: inline-block;
+  margin-top: 80px;
+  cursor: pointer;
 }
 
-/* Fade-in */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+.arrow-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-left: 4px solid #aa66ff;
+  border-bottom: 4px solid #aa66ff;
+  transform: rotate(-45deg);
+  animation: bounceDown 2s infinite;
+  margin: 0 auto;
 }
 
-/* Bounce */
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(10px); }
-  60% { transform: translateY(5px); }
+@keyframes bounceDown {
+  0%, 100% {
+    transform: rotate(-45deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-45deg) translateY(8px);
+  }
 }
+
+
